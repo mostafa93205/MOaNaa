@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MOANAÀ - Elegant Beauty</title>
+    <!-- إضافة مكتبة AOS للتأثيرات -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -67,6 +70,22 @@
             color: var(--dark);
             font-size: 1.1rem;
             transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--beige);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
         }
 
         .nav-links a:hover {
@@ -93,7 +112,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(45deg, var(--beige) 0%, white 100%);
             padding: 2rem;
             margin-top: 60px;
         }
@@ -106,11 +124,33 @@
         .hero-logo {
             width: 300px;
             margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .hero-logo:hover {
+            transform: scale(1.05) rotate(2deg);
         }
 
         .hero h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero-content h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--beige);
+            transition: width 0.3s ease;
+        }
+
+        .hero-content h1:hover::after {
+            width: 100%;
         }
 
         .hero p {
@@ -127,6 +167,28 @@
             text-decoration: none;
             border-radius: 30px;
             transition: transform 0.3s;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--beige);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+            z-index: -1;
+        }
+
+        .cta-button:hover::before {
+            transform: scaleX(1);
+            transform-origin: left;
         }
 
         .cta-button:hover {
@@ -153,14 +215,33 @@
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
 
-        .feature-card:hover {
-            transform: translateY(-10px);
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+
+        .feature-card:hover::before {
+            transform: translateX(100%);
         }
 
         .feature-card h3 {
             margin: 1rem 0;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px) rotate(1deg);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
 
         footer {
@@ -203,7 +284,150 @@
                 width: 200px;
             }
         }
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin: 2rem 0;
+            perspective: 1000px;
+        }
+
+        .social-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+            transform-style: preserve-3d;
+        }
+
+        .social-button::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.2);
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .social-button:hover::after {
+            transform: translateX(0);
+        }
+
+        .social-button:hover {
+            transform: translateY(-5px) rotateX(10deg);
+        }
+
+        .instagram-btn {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: white;
+        }
+
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: white;
+        }
+
+        .phone-btn {
+            background-color: var(--dark);
+            color: white;
+        }
+
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .pulse {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .gradient-bg {
+            background: linear-gradient(-45deg, #E5D1C7, #f8f8f8, #e7e7e7, #ffffff);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .moving-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, transparent 0%, rgba(229,209,199,0.1) 100%);
+            animation: bgMove 20s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes bgMove {
+            0% { transform: translate(0, 0); }
+            25% { transform: translate(10px, 10px); }
+            50% { transform: translate(0, 20px); }
+            75% { transform: translate(-10px, 10px); }
+            100% { transform: translate(0, 0); }
+        }
+
+        /* Add icons */
+        .social-button i {
+            font-size: 1.2rem;
+        }
+
+        .about {
+          padding: 5rem 2rem;
+          text-align: center;
+        }
+
+        .about h2 {
+          margin-bottom: 2rem;
+          font-size: 2.5rem;
+        }
+
+        .about p {
+          max-width: 800px;
+          margin: 0 auto;
+          font-size: 1.2rem;
+        }
+
+        .container {
+          max-width: 1200px;
+          margin: 0 auto;
+        }
     </style>
+    
 </head>
 <body class="ar">
     <header class="header">
@@ -234,35 +458,45 @@
         </nav>
     </header>
 
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-02-19%20at%2012.19.32%20PM%20(1)-DFeMTTUwBnJSKctNrepSNPAP9gDnqy.jpeg" alt="Moanaà Logo" class="hero-logo">
-            <h1 lang="ar">مرحباً بكم في موانا</h1>
-            <h1 lang="en">Welcome to MOANAÀ</h1>
-            <p lang="ar">نقدم لكم أفضل الخدمات بأعلى مستويات الجودة والاحترافية</p>
-            <p lang="en">We offer the best services with the highest levels of quality and professionalism</p>
-            <a href="#contact" class="cta-button">
+    <section class="hero gradient-bg" id="home">
+        <div class="moving-bg"></div>
+        <div class="hero-content" data-aos="fade-up">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-02-19%20at%2012.19.32%20PM%20(1)-DFeMTTUwBnJSKctNrepSNPAP9gDnqy.jpeg" alt="Moanaà Logo" class="hero-logo floating">
+            <h1 lang="ar" class="pulse">مرحباً بكم في موانا</h1>
+            <h1 lang="en" class="pulse">Welcome to MOANAÀ</h1>
+            <p lang="ar" data-aos="fade-up" data-aos-delay="200">نقدم لكم أفضل الخدمات بأعلى مستويات الجودة والاحترافية</p>
+            <p lang="en" data-aos="fade-up" data-aos-delay="200">We offer the best services with the highest levels of quality and professionalism</p>
+            <a href="#contact" class="cta-button" data-aos="fade-up" data-aos-delay="400">
                 <span lang="ar">تواصل معنا</span>
                 <span lang="en">Contact Us</span>
             </a>
         </div>
     </section>
 
+    <section id="about" class="about gradient-bg">
+        <div class="container" data-aos="fade-up">
+          <h2 lang="ar">من نحن</h2>
+          <h2 lang="en">About Us</h2>
+          <p lang="ar">موانا هي شركة رائدة في مجال الجمال والعناية بالبشرة. نحن نقدم منتجات وخدمات عالية الجودة لعملائنا الكرام.</p>
+          <p lang="en">MOANAÀ is a leading company in the beauty and skincare industry. We offer high-quality products and services to our valued customers.</p>
+        </div>
+      </section>
+
     <section class="features" id="services">
         <div class="features-grid">
-            <div class="feature-card">
+            <div class="feature-card" data-aos="flip-left" data-aos-delay="100">
                 <h3 lang="ar">خدمة مميزة</h3>
                 <h3 lang="en">Premium Service</h3>
                 <p lang="ar">نقدم خدمات احترافية تلبي جميع احتياجاتكم</p>
                 <p lang="en">We provide professional services that meet all your needs</p>
             </div>
-            <div class="feature-card">
+            <div class="feature-card" data-aos="flip-left" data-aos-delay="200">
                 <h3 lang="ar">جودة عالية</h3>
                 <h3 lang="en">High Quality</h3>
                 <p lang="ar">نلتزم بأعلى معايير الجودة في جميع خدماتنا</p>
                 <p lang="en">We commit to the highest quality standards in all our services</p>
             </div>
-            <div class="feature-card">
+            <div class="feature-card" data-aos="flip-left" data-aos-delay="300">
                 <h3 lang="ar">دعم متواصل</h3>
                 <h3 lang="en">Continuous Support</h3>
                 <p lang="ar">فريقنا متاح دائماً لمساعدتكم وتقديم الدعم المطلوب</p>
@@ -272,24 +506,48 @@
     </section>
 
     <footer id="contact">
-        <p lang="ar">تواصل معنا</p>
-        <p lang="en">Contact Us</p>
-        <p>
-            <span lang="ar">البريد الإلكتروني: </span>
-            <span lang="en">Email: </span>
-            info@moanaa.com
-        </p>
-        <p>
-            <span lang="ar">الهاتف: </span>
-            <span lang="en">Phone: </span>
-            +123 456 789
-        </p>
+        <h2 lang="ar">تواصل معنا</h2>
+        <h2 lang="en">Contact Us</h2>
+
+        <div class="contact-info">
+            <div class="social-links">
+                <a href="https://www.instagram.com/moan_aa2021?igsh=MWxkdWR3ejBjMzJ0" target="_blank" class="social-button instagram-btn">
+                    <i class="fab fa-instagram"></i>
+                    <span lang="ar">تابعنا على انستجرام</span>
+                    <span lang="en">Follow on Instagram</span>
+                </a>
+                <a href="https://wa.me/201113375019" target="_blank" class="social-button whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i>
+                    <span lang="ar">واتساب</span>
+                    <span lang="en">WhatsApp</span>
+                </a>
+                <a href="tel:+201113375019" class="social-button phone-btn">
+                    <i class="fas fa-phone"></i>
+                    <span lang="ar">اتصل بنا</span>
+                    <span lang="en">Call Us</span>
+                </a>
+            </div>
+
+            <p>
+                <span lang="ar">رقم الهاتف: </span>
+                <span lang="en">Phone: </span>
+                <a href="tel:+201113375019" style="color: inherit;">+20 111 337 5019</a>
+            </p>
+            
+            <p>
+                <span lang="ar">انستجرام: </span>
+                <span lang="en">Instagram: </span>
+                <a href="https://www.instagram.com/moan_aa2021?igsh=MWxkdWR3ejBjMzJ0" target="_blank" style="color: inherit;">@moan_aa2021</a>
+            </p>
+        </div>
+
         <p>
             <span lang="ar">جميع الحقوق محفوظة &copy; 2024 MOANAÀ</span>
             <span lang="en">&copy; 2024 MOANAÀ. All rights reserved</span>
         </p>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         function toggleLanguage() {
             const body = document.body;
@@ -308,6 +566,22 @@
         document.addEventListener('DOMContentLoaded', () => {
             const savedLanguage = localStorage.getItem('language') || 'ar';
             document.body.classList.add(savedLanguage);
+        });
+
+        // تهيئة مكتبة AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+              behavior: 'smooth'
+            });
+          });
         });
     </script>
 </body>
