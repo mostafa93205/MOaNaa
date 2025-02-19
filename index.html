@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOANAÀ - Elegant Beauty</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --beige: #E5D1C7;
+            --gray: #D9D9D9;
+            --dark: #333333;
+        }
+
+        body {
+            background-color: #FFFFFF;
+            color: var(--dark);
+            line-height: 1.6;
+            transition: all 0.3s ease;
+        }
+
+        body.en {
+            direction: ltr;
+        }
+
+        body.ar {
+            direction: rtl;
+        }
+
+        .header {
+            padding: 1rem;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            width: 120px;
+            height: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--beige);
+        }
+
+        .lang-switch {
+            background-color: var(--beige);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .lang-switch:hover {
+            background-color: var(--dark);
+            color: white;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(45deg, var(--beige) 0%, white 100%);
+            padding: 2rem;
+            margin-top: 60px;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+        }
+
+        .hero-logo {
+            width: 300px;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: var(--dark);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: transform 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+        }
+
+        .features {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-card h3 {
+            margin: 1rem 0;
+        }
+
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        [lang="en"] {
+            display: none;
+        }
+
+        .en [lang="en"] {
+            display: block;
+        }
+
+        .en [lang="ar"] {
+            display: none;
+        }
+
+        .ar [lang="ar"] {
+            display: block;
+        }
+
+        .ar [lang="en"] {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-logo {
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+<body class="ar">
+    <header class="header">
+        <nav class="nav">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-02-19%20at%2012.19.32%20PM%20(1)-DFeMTTUwBnJSKctNrepSNPAP9gDnqy.jpeg" alt="Moanaà Logo" class="logo">
+            <ul class="nav-links">
+                <li>
+                    <a href="#home" lang="ar">الرئيسية</a>
+                    <a href="#home" lang="en">Home</a>
+                </li>
+                <li>
+                    <a href="#about" lang="ar">من نحن</a>
+                    <a href="#about" lang="en">About</a>
+                </li>
+                <li>
+                    <a href="#services" lang="ar">خدماتنا</a>
+                    <a href="#services" lang="en">Services</a>
+                </li>
+                <li>
+                    <a href="#contact" lang="ar">اتصل بنا</a>
+                    <a href="#contact" lang="en">Contact</a>
+                </li>
+            </ul>
+            <button class="lang-switch" onclick="toggleLanguage()">
+                <span lang="ar">English</span>
+                <span lang="en">عربي</span>
+            </button>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-02-19%20at%2012.19.32%20PM%20(1)-DFeMTTUwBnJSKctNrepSNPAP9gDnqy.jpeg" alt="Moanaà Logo" class="hero-logo">
+            <h1 lang="ar">مرحباً بكم في موانا</h1>
+            <h1 lang="en">Welcome to MOANAÀ</h1>
+            <p lang="ar">نقدم لكم أفضل الخدمات بأعلى مستويات الجودة والاحترافية</p>
+            <p lang="en">We offer the best services with the highest levels of quality and professionalism</p>
+            <a href="#contact" class="cta-button">
+                <span lang="ar">تواصل معنا</span>
+                <span lang="en">Contact Us</span>
+            </a>
+        </div>
+    </section>
+
+    <section class="features" id="services">
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3 lang="ar">خدمة مميزة</h3>
+                <h3 lang="en">Premium Service</h3>
+                <p lang="ar">نقدم خدمات احترافية تلبي جميع احتياجاتكم</p>
+                <p lang="en">We provide professional services that meet all your needs</p>
+            </div>
+            <div class="feature-card">
+                <h3 lang="ar">جودة عالية</h3>
+                <h3 lang="en">High Quality</h3>
+                <p lang="ar">نلتزم بأعلى معايير الجودة في جميع خدماتنا</p>
+                <p lang="en">We commit to the highest quality standards in all our services</p>
+            </div>
+            <div class="feature-card">
+                <h3 lang="ar">دعم متواصل</h3>
+                <h3 lang="en">Continuous Support</h3>
+                <p lang="ar">فريقنا متاح دائماً لمساعدتكم وتقديم الدعم المطلوب</p>
+                <p lang="en">Our team is always available to help and provide the required support</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <p lang="ar">تواصل معنا</p>
+        <p lang="en">Contact Us</p>
+        <p>
+            <span lang="ar">البريد الإلكتروني: </span>
+            <span lang="en">Email: </span>
+            info@moanaa.com
+        </p>
+        <p>
+            <span lang="ar">الهاتف: </span>
+            <span lang="en">Phone: </span>
+            +123 456 789
+        </p>
+        <p>
+            <span lang="ar">جميع الحقوق محفوظة &copy; 2024 MOANAÀ</span>
+            <span lang="en">&copy; 2024 MOANAÀ. All rights reserved</span>
+        </p>
+    </footer>
+
+    <script>
+        function toggleLanguage() {
+            const body = document.body;
+            if (body.classList.contains('ar')) {
+                body.classList.remove('ar');
+                body.classList.add('en');
+                localStorage.setItem('language', 'en');
+            } else {
+                body.classList.remove('en');
+                body.classList.add('ar');
+                localStorage.setItem('language', 'ar');
+            }
+        }
+
+        // Check saved language preference
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLanguage = localStorage.getItem('language') || 'ar';
+            document.body.classList.add(savedLanguage);
+        });
+    </script>
+</body>
+</html>
