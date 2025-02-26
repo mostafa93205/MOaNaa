@@ -703,23 +703,36 @@
     </div>
 
     <script>
-        function toggleLanguage() {
-            const body = document.body;
-            if (body.classList.contains('ar')) {
-                body.classList.remove('ar');
-                body.classList.add('en');
-                document.documentElement.dir = 'ltr';
-                document.documentElement.lang = 'en';
-                localStorage.setItem('language', 'en');
-            } else {
-                body.classList.remove('en');
-                body.classList.add('ar');
-                document.documentElement.dir = 'rtl';
-                document.documentElement.lang = 'ar';
-                localStorage.setItem('language', 'ar');
-            }
-        }
+function updateLanguageSwitchButton(lang) {
+    const button = document.querySelector('.lang-switch');
+    if (button) {
+        button.innerHTML = lang === 'ar' ? 'English' : 'عربي';
+    }
+}
 
+function applyLanguage(lang) {
+    document.body.classList.remove('ar', 'en');
+    document.body.classList.add(lang);
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.documentElement.lang = lang;
+    updateLanguageSwitchButton(lang);
+}
+
+// Initialize language
+document.addEventListener('DOMContentLoaded', () => {
+    const savedLanguage = localStorage.getItem('language') || 'ar';
+    applyLanguage(savedLanguage);
+
+    // Add error handling for language switching
+    try {
+        toggleLanguage();
+        toggleLanguage(); // Switch back to original language
+    } catch (error) {
+        console.error('Error during language switch test:', error);
+        // Fallback to default language if there's an error
+        applyLanguage('ar');
+    }
+});
         function openModal(modalId) {
             document.getElementById(modalId).style.display = 'flex';
             document.body.style.overflow = 'hidden';
@@ -738,20 +751,6 @@
                 closeModal(event.target.id);
             }
         }
-
-        // Initialize language
-        document.addEventListener('DOMContentLoaded', () => {
-            const savedLanguage = localStorage.getItem('language') || 'ar';
-            if (savedLanguage === 'en') {
-                document.body.classList.add('en');
-                document.documentElement.dir = 'ltr';
-                document.documentElement.lang = 'en';
-            } else {
-                document.body.classList.add('ar');
-                document.documentElement.dir = 'rtl';
-                document.documentElement.lang = 'ar';
-            }
-        });
 
         // Smooth scroll for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -803,6 +802,20 @@
             });
         });
     </script>
+    <script>
+    // Fallback content in case of rendering issues
+    window.addEventListener('error', function(e) {
+        if (document.body.innerHTML.trim() === '') {
+            document.body.innerHTML = `
+                <div style="text-align: center; padding: 20px;">
+                    <h1>عذرًا، حدث خطأ أثناء تحميل الصفحة</h1>
+                    <h1>Sorry, an error occurred while loading the page</h1>
+                    <button onclick="window.location.reload()">إعادة تحميل / Reload</button>
+                </div>
+            `;
+        }
+    });
+</script>
 </body>
 </html>
 
