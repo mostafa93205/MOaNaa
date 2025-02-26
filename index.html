@@ -345,9 +345,24 @@
                 font-size: 3rem;
             }
         }
+
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            z-index: 9999;
+        }
     </style>
 </head>
 <body>
+    <div id="loading-indicator" class="loading">جاري التحميل... / Loading...</div>
     <header class="header">
         <nav class="container nav">
             <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-02-19%20at%2012.19.32%20PM%20(1)-DFeMTTUwBnJSKctNrepSNPAP9gDnqy.jpeg" alt="شعار موانا - MOANAÀ Logo" class="logo">
@@ -373,6 +388,10 @@
     <main>
         <section id="home" class="hero">
             <div class="hero-content">
+                <noscript>
+                    <p lang="ar">يرجى تمكين JavaScript لعرض هذا الموقع بشكل صحيح.</p>
+                    <p lang="en">Please enable JavaScript to view this website correctly.</p>
+                </noscript>
                 <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-02-19%20at%2012.19.32%20PM%20(1)-DFeMTTUwBnJSKctNrepSNPAP9gDnqy.jpeg" alt="شعار موانا - MOANAÀ Logo" class="hero-logo">
                 <h1 lang="ar">موانا - منتجات العناية الطبيعية للبشرة والشعر ✨</h1>
                 <h1 lang="en">MOANAÀ - Natural Skin & Hair Care Products ✨</h1>
@@ -517,8 +536,8 @@
                     </a>
                 </div>
                 <p>
-                    <span lang="ar">رقم الهاتف: </span>
-                    <span lang="en">Phone: </span>
+                    <span lang="ar">رقم الهاتف: </span> 
+                    <span lang="en">Phone: </span> 
                     <a href="tel:+201113375019">+20 111 337 5019</a>
                 </p>
             </div>
@@ -765,5 +784,25 @@
       ]
     }
     </script>
+    <script>
+        window.addEventListener('load', function() {
+            document.getElementById('loading-indicator').style.display = 'none';
+        });
+
+        // Error handling
+        window.addEventListener('error', function(e) {
+            console.error('An error occurred:', e.error);
+            // You can add more specific error handling here if needed
+        });
+
+        // Optimize image loading
+        document.addEventListener('DOMContentLoaded', function() {
+            var images = document.querySelectorAll('img');
+            images.forEach(function(img) {
+                img.setAttribute('loading', 'lazy');
+            });
+        });
+    </script>
 </body>
 </html>
+
