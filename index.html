@@ -3,26 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MOANAÀ - منتجات العناية بالبشرة الطبيعية | Elegant Beauty Products</title>
-    <meta name="description" content="موانا تقدم منتجات العناية بالبشرة الطبيعية عالية الجودة. اكتشف مجموعتنا من البادي لوشن وليب بالم للحصول على بشرة ناعمة ومشرقة. | MOANAÀ offers high-quality natural skincare products. Discover our collection of body lotions and lip balms for soft, radiant skin.">
-    <meta name="keywords" content="موانا, MOANAÀ, منتجات العناية بالبشرة, بادي لوشن, ليب بالم, مستحضرات تجميل طبيعية, skincare products, body lotion, lip balm, natural cosmetics">
+    <title>MOANAÀ - منتجات العناية بالبشرة والشعر الطبيعية | Elegant Beauty Products</title>
+    <meta name="description" content="موانا تقدم منتجات العناية بالبشرة والشعر الطبيعية عالية الجودة. اكتشف مجموعتنا من البادي سبلاش، البادي لوشن، زيت الشعر وليب بالم للحصول على بشرة ناعمة ومشرقة وشعر صحي. | MOANAÀ offers high-quality natural skincare and hair care products. Discover our collection of body splash, body lotions, hair oil and lip balms for soft, radiant skin and healthy hair.">
+    <meta name="keywords" content="موانا, MOANAÀ, منتجات العناية بالبشرة, بادي سبلاش, بادي لوشن, ليب بالم, زيت الشعر, مستحضرات تجميل طبيعية, skincare products, body splash, body lotion, lip balm, hair oil, natural cosmetics">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.moanaa.com/">
-    <meta property="og:title" content="MOANAÀ - منتجات العناية بالبشرة الطبيعية | Elegant Beauty Products">
-    <meta property="og:description" content="اكتشف مجموعة موانا من منتجات العناية بالبشرة الطبيعية عالية الجودة. | Discover MOANAÀ's collection of high-quality natural skincare products.">
+    <meta property="og:title" content="MOANAÀ - منتجات العناية بالبشرة والشعر الطبيعية | Elegant Beauty Products">
+    <meta property="og:description" content="اكتشف مجموعة موانا من منتجات العناية بالبشرة والشعر الطبيعية عالية الجودة. | Discover MOANAÀ's collection of high-quality natural skincare and hair care products.">
     <meta property="og:image" content="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-02-19%20at%2012.19.32%20PM%20(1)-DFeMTTUwBnJSKctNrepSNPAP9gDnqy.jpeg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://www.moanaa.com/">
-    <meta property="twitter:title" content="MOANAÀ - منتجات العناية بالبشرة الطبيعية | Elegant Beauty Products">
-    <meta property="twitter:description" content="اكتشف مجموعة موانا من منتجات العناية بالبشرة الطبيعية عالية الجودة. | Discover MOANAÀ's collection of high-quality natural skincare products.">
+    <meta property="twitter:title" content="MOANAÀ - منتجات العناية بالبشرة والشعر الطبيعية | Elegant Beauty Products">
+    <meta property="twitter:description" content="اكتشف مجموعة موانا من منتجات العناية بالبشرة والشعر الطبيعية عالية الجودة. | Discover MOANAÀ's collection of high-quality natural skincare and hair care products.">
     <meta property="twitter:image" content="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-02-19%20at%2012.19.32%20PM%20(1)-DFeMTTUwBnJSKctNrepSNPAP9gDnqy.jpeg">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
+
         :root {
             --background: #FFFFFF;
             --foreground: #09090B;
@@ -38,13 +40,20 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
+            font-family: 'Cairo', sans-serif;
             background-color: var(--background);
             color: var(--foreground);
             line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
         .header {
@@ -54,13 +63,7 @@
             background-color: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border);
-            z-index: 50;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
+            z-index: 1000;
         }
 
         .nav {
@@ -77,14 +80,6 @@
 
         .nav-links {
             display: none;
-            gap: 1.5rem;
-            list-style: none;
-        }
-
-        @media (min-width: 768px) {
-            .nav-links {
-                display: flex;
-            }
         }
 
         .nav-links a {
@@ -113,15 +108,15 @@
 
         .hero {
             min-height: 100vh;
-            padding-top: 96px;
+            padding-top: 64px;
             display: flex;
             align-items: center;
             justify-content: center;
             background: linear-gradient(135deg, rgba(229, 209, 199, 0.2), transparent);
+            text-align: center;
         }
 
         .hero-content {
-            text-align: center;
             padding: 2rem;
         }
 
@@ -142,12 +137,7 @@
             font-size: 2.25rem;
             font-weight: bold;
             margin-bottom: 1rem;
-        }
-
-        @media (min-width: 640px) {
-            .hero h1 {
-                font-size: 3rem;
-            }
+            color: var(--primary);
         }
 
         .hero p {
@@ -156,70 +146,104 @@
             margin: 0 auto 2rem;
         }
 
-        .button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.75rem 1.5rem;
-            border-radius: var(--radius);
-            font-weight: 500;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .button-primary {
+        .btn {
+            display: inline-block;
             background-color: var(--primary);
             color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
-        .button-primary:hover {
+        .btn:hover {
             background-color: var(--primary-hover);
             transform: translateY(-2px);
         }
 
-        .products {
-            padding: 6rem 2rem;
+        .about-section {
+            padding: 4rem 0;
+            background-color: var(--muted);
+        }
+
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .about-content {
+                flex-direction: row;
+                align-items: center;
+            }
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            border-radius: var(--radius);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .features, .products {
+            padding: 4rem 0;
         }
 
         .section-title {
             font-size: 2rem;
             text-align: center;
             margin-bottom: 3rem;
+            color: var(--primary);
         }
 
-        .products .container {
+        .feature-grid, .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
         }
 
-        .product-card {
+        .feature-item, .product-card {
             background: white;
             border-radius: var(--radius);
             overflow: hidden;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            transition: box-shadow 0.3s ease;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+            text-align: center;
+            padding: 2rem;
         }
 
-        .product-card:hover {
+        .feature-item:hover, .product-card:hover {
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .feature-item h3, .product-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
         }
 
         .product-image {
             width: 100%;
-            height: 300px;
+            height: 250px;
             object-fit: cover;
-        }
-
-        .product-details {
-            padding: 1.5rem;
-            text-align: center;
-        }
-
-        .product-title {
-            font-size: 1.5rem;
+            border-radius: var(--radius);
             margin-bottom: 1rem;
         }
 
@@ -231,7 +255,7 @@
             width: 100%;
             height: 100%;
             background: rgba(0, 0, 0, 0.5);
-            z-index: 100;
+            z-index: 1000;
             align-items: center;
             justify-content: center;
         }
@@ -240,10 +264,9 @@
             background: white;
             padding: 2rem;
             border-radius: var(--radius);
-            max-width: 42rem;
+            max-width: 500px;
             max-height: 90vh;
             overflow-y: auto;
-            margin: 2rem;
             position: relative;
         }
 
@@ -258,7 +281,7 @@
 
         .contact {
             background: var(--muted);
-            padding: 6rem 2rem;
+            padding: 4rem 0;
             text-align: center;
         }
 
@@ -278,35 +301,25 @@
             border-radius: var(--radius);
             text-decoration: none;
             transition: transform 0.3s ease;
+            color: white;
         }
 
         .social-button:hover {
             transform: translateY(-2px);
         }
 
-        .whatsapp {
-            background: #25D366;
-            color: white;
-        }
-
-        .instagram {
-            background: #E1306C;
-            color: white;
-        }
-
-        .phone {
-            background: var(--foreground);
-            color: white;
-        }
+        .whatsapp { background: #25D366; }
+        .instagram { background: #E1306C; }
+        .phone { background: var(--foreground); }
 
         .footer {
-            padding: 1.5rem;
+            background-color: var(--foreground);
+            color: var(--background);
+            padding: 2rem 0;
             text-align: center;
-            border-top: 1px solid var(--border);
         }
 
         .footer p {
-            color: var(--muted-foreground);
             font-size: 0.875rem;
         }
 
@@ -322,9 +335,14 @@
             display: none;
         }
 
-        @media (max-width: 640px) {
-            .products .container {
-                grid-template-columns: 1fr;
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+                gap: 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
             }
         }
     </style>
@@ -333,12 +351,18 @@
     <header class="header">
         <nav class="container nav">
             <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-02-19%20at%2012.19.32%20PM%20(1)-DFeMTTUwBnJSKctNrepSNPAP9gDnqy.jpeg" alt="شعار موانا - MOANAÀ Logo" class="logo">
-            <ul class="nav-links">
-                <li><a href="#home" lang="ar">الرئيسية</a><a href="#home" lang="en">Home</a></li>
-                <li><a href="#about" lang="ar">من نحن</a><a href="#about" lang="en">About</a></li>
-                <li><a href="#products" lang="ar">منتجاتنا</a><a href="#products" lang="en">Our Products</a></li>
-                <li><a href="#contact" lang="ar">اتصل بنا</a><a href="#contact" lang="en">Contact</a></li>
-            </ul>
+            <div class="nav-links">
+                <a href="#home" lang="ar">الرئيسية</a>
+                <a href="#home" lang="en">Home</a>
+                <a href="#about" lang="ar">من نحن</a>
+                <a href="#about" lang="en">About Us</a>
+                <a href="#features" lang="ar">المميزات</a>
+                <a href="#features" lang="en">Features</a>
+                <a href="#products" lang="ar">منتجاتنا</a>
+                <a href="#products" lang="en">Our Products</a>
+                <a href="#contact" lang="ar">اتصل بنا</a>
+                <a href="#contact" lang="en">Contact</a>
+            </div>
             <button class="lang-switch" onclick="toggleLanguage()">
                 <span lang="ar">English</span>
                 <span lang="en">عربي</span>
@@ -350,104 +374,222 @@
         <section id="home" class="hero">
             <div class="hero-content">
                 <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-02-19%20at%2012.19.32%20PM%20(1)-DFeMTTUwBnJSKctNrepSNPAP9gDnqy.jpeg" alt="شعار موانا - MOANAÀ Logo" class="hero-logo">
-                <h1 lang="ar">مرحباً بكم في موانا</h1>
-                <h1 lang="en">Welcome to MOANAÀ</h1>
-                <p lang="ar">نقدم لكم أفضل منتجات العناية بالبشرة بأعلى مستويات الجودة والاحترافية</p>
-                <p lang="en">We offer the best skincare products with the highest levels of quality and professionalism</p>
-                <a href="#contact" class="button button-primary">
-                    <span lang="ar">تواصل معنا</span>
-                    <span lang="en">Contact Us</span>
+                <h1 lang="ar">موانا - منتجات العناية الطبيعية للبشرة والشعر ✨</h1>
+                <h1 lang="en">MOANAÀ - Natural Skin & Hair Care Products ✨</h1>
+                <p lang="ar">نقدم لكِ منتجات طبيعية عالية الجودة للعناية بالبشرة والشعر. منتجاتنا مصنوعة من مكونات طبيعية آمنة ومناسبة لجميع أنواع البشرة حتى الحساسة.</p>
+                <p lang="en">We offer high-quality natural products for skin and hair care. Our products are made from safe natural ingredients suitable for all skin types, even sensitive skin.</p>
+                <a href="#products" class="btn">
+                    <span lang="ar">تصفح منتجاتنا</span>
+                    <span lang="en">Browse Our Products</span>
                 </a>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2 class="section-title" lang="ar">من نحن</h2>
+                <h2 class="section-title" lang="en">About Us</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p lang="ar">
+                            موانا هي علامة تجارية مصرية متخصصة في منتجات العناية بالبشرة والشعر الطبيعية. نحن نؤمن بأن الجمال الحقيقي يأتي من استخدام منتجات طبيعية وآمنة.
+                        </p>
+                        <p lang="en">
+                            MOANAÀ is an Egyptian brand specializing in natural skin and hair care products. We believe that true beauty comes from using natural and safe products.
+                        </p>
+                        <p lang="ar">
+                            نحن نهتم بتقديم منتجات عالية الجودة تلبي احتياجات عملائنا وتحل مشاكلهم. جميع منتجاتنا مصنوعة من مكونات طبيعية مختارة بعناية لضمان أفضل النتائج.
+                        </p>
+                        <p lang="en">
+                            We are committed to providing high-quality products that meet our customers' needs and solve their problems. All our products are made from carefully selected natural ingredients to ensure the best results.
+                        </p>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-02-26%20at%209.36.21%20PM-8tCePPggYKCbUcTtnjeJtDnFtJlclj.jpeg" alt="مجموعة منتجات موانا - MOANAÀ Product Collection" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="container">
+                <h2 class="section-title" lang="ar">ما الذي يميز منتجات موانا؟</h2>
+                <h2 class="section-title" lang="en">What Makes MOANAÀ Products Special?</h2>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">💪</div>
+                        <h3 lang="ar">ثبات قوي</h3>
+                        <h3 lang="en">Strong Longevity</h3>
+                        <p lang="ar">منتجاتنا تدوم طول اليوم، مش هتحتاجي تكرري الاستخدام كل شوية</p>
+                        <p lang="en">Our products last all day, you won't need to reapply frequently</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🌸</div>
+                        <h3 lang="ar">مكونات طبيعية</h3>
+                        <h3 lang="en">Natural Ingredients</h3>
+                        <p lang="ar">نستخدم مكونات طبيعية عالية الجودة لضمان أفضل النتائج وتجنب الآثار الجانبية</p>
+                        <p lang="en">We use high-quality natural ingredients to ensure the best results and avoid side effects</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">❤️</div>
+                        <h3 lang="ar">آمن للبشرة</h3>
+                        <h3 lang="en">Skin-Safe</h3>
+                        <p lang="ar">منتجاتنا مناسبة لجميع أنواع البشرة حتى الحساسة، مش هتسبب أي تهيج أو احمرار</p>
+                        <p lang="en">Our products are suitable for all skin types, even sensitive skin, and won't cause any irritation or redness</p>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="products" class="products">
-            <h2 class="section-title" lang="ar">منتجاتنا</h2>
-            <h2 class="section-title" lang="en">Our Products</h2>
             <div class="container">
-                <article class="product-card">
-                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/body-lotion-image.jpg-9Nwqxlay3POFbytBeNO04Tadbh9OAC.jpeg" alt="بادي لوشن موانا - MOANAÀ Body Lotion" class="product-image">
-                    <div class="product-details">
-                        <h3 class="product-title">🎀البادي لوشن (Body Lotion moanaa)</h3>
-                        <button class="button button-primary" onclick="openModal('productModal')">
+                <h2 class="section-title" lang="ar">منتجاتنا</h2>
+                <h2 class="section-title" lang="en">Our Products</h2>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-02-26%20at%209.31.28%20PM-Af1tFS1Hj0jnXfAuduuJRml4HI2tWV.jpeg" alt="بادي سبلاش موانا - MOANAÀ Body Splash" class="product-image">
+                        <h3 class="product-title" lang="ar">بادي سبلاش موانا</h3>
+                        <h3 class="product-title" lang="en">MOANAÀ Body Splash</h3>
+                        <p lang="ar">عطرك المفضل في شكل بادي سبلاش</p>
+                        <p lang="en">Your favorite fragrance as a body splash</p>
+                        <button class="btn" onclick="openModal('bodySplashModal')">
                             <span lang="ar">عرض التفاصيل</span>
                             <span lang="en">View Details</span>
                         </button>
                     </div>
-                </article>
-
-                <article class="product-card">
-                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-02-20%20at%2022.21.53_bcc790a2.jpg-LHiafT3nOsgSp7srS40WDydaU1sIk4.jpeg" alt="ليب بالم موانا - MOANAÀ Lip Balm" class="product-image">
-                    <div class="product-details">
-                        <h3 class="product-title">💋 ليب بالم موانا (Lip Balm moanaa)</h3>
-                        <button class="button button-primary" onclick="openModal('lipBalmModal')">
+                    <div class="product-card">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/body-lotion-image.jpg-9Nwqxlay3POFbytBeNO04Tadbh9OAC.jpeg" alt="بادي لوشن موانا - MOANAÀ Body Lotion" class="product-image">
+                        <h3 class="product-title" lang="ar">🎀البادي لوشن</h3>
+                        <h3 class="product-title" lang="en">🎀Body Lotion</h3>
+                        <p lang="ar">لوشن مرطب للجسم</p>
+                        <p lang="en">Moisturizing body lotion</p>
+                        <button class="btn" onclick="openModal('bodyLotionModal')">
                             <span lang="ar">عرض التفاصيل</span>
                             <span lang="en">View Details</span>
                         </button>
                     </div>
-                </article>
+                    <div class="product-card">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-02-20%20at%2022.21.53_bcc790a2.jpg-LHiafT3nOsgSp7srS40WDydaU1sIk4.jpeg" alt="ليب بالم موانا - MOANAÀ Lip Balm" class="product-image">
+                        <h3 class="product-title" lang="ar">💋 ليب بالم موانا</h3>
+                        <h3 class="product-title" lang="en">💋 MOANAÀ Lip Balm</h3>
+                        <p lang="ar">بلسم مرطب للشفاه</p>
+                        <p lang="en">Moisturizing lip balm</p>
+                        <button class="btn" onclick="openModal('lipBalmModal')">
+                            <span lang="ar">عرض التفاصيل</span>
+                            <span lang="en">View Details</span>
+                        </button>
+                    </div>
+                    <!-- Hair Oil Product -->
+                    <div class="product-card">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-02-26%20at%209.32.20%20PM-PgtTBblhWco41mjYych8EPuF8B8z7x.jpeg" alt="زيت موانا للشعر - MOANAÀ Hair Oil" class="product-image">
+                        <h3 class="product-title" lang="ar">💗 زيت موانا للشعر</h3>
+                        <h3 class="product-title" lang="en">💗 Moanaa Oil</h3>
+                        <p lang="ar">زيت طبيعي للعناية بالشعر</p>
+                        <p lang="en">Natural hair care oil</p>
+                        <button class="btn" onclick="openModal('hairOilModal')">
+                            <span lang="ar">عرض التفاصيل</span>
+                            <span lang="en">View Details</span>
+                        </button>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="contact" class="contact">
-            <h2 class="section-title" lang="ar">تواصل معنا</h2>
-            <h2 class="section-title" lang="en">Contact Us</h2>
-            <div class="social-buttons">
-                <a href="https://wa.me/201113375019" target="_blank" rel="noopener noreferrer" class="social-button whatsapp">
-                    <i class="fab fa-whatsapp"></i>
-                    <span lang="ar">واتساب</span>
-                    <span lang="en">WhatsApp</span>
-                </a>
-                <a href="https://www.instagram.com/moan_aa2021" target="_blank" rel="noopener noreferrer" class="social-button instagram">
-                    <i class="fab fa-instagram"></i>
-                    <span lang="ar">انستجرام</span>
-                    <span lang="en">Instagram</span>
-                </a>
-                <a href="tel:+201113375019" class="social-button phone">
-                    <i class="fas fa-phone"></i>
-                    <span lang="ar">اتصل بنا</span>
-                    <span lang="en">Call Us</span>
-                </a>
+            <div class="container">
+                <h2 class="section-title" lang="ar">تواصل معنا</h2>
+                <h2 class="section-title" lang="en">Contact Us</h2>
+                <div class="social-buttons">
+                    <a href="https://wa.me/201113375019" target="_blank" rel="noopener noreferrer" class="social-button whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                        <span lang="ar">واتساب</span>
+                        <span lang="en">WhatsApp</span>
+                    </a>
+                    <a href="https://www.instagram.com/moan_aa2021" target="_blank" rel="noopener noreferrer" class="social-button instagram">
+                        <i class="fab fa-instagram"></i>
+                        <span lang="ar">انستجرام</span>
+                        <span lang="en">Instagram</span>
+                    </a>
+                    <a href="tel:+201113375019" class="social-button phone">
+                        <i class="fas fa-phone"></i>
+                        <span lang="ar">اتصل بنا</span>
+                        <span lang="en">Call Us</span>
+                    </a>
+                </div>
+                <p>
+                    <span lang="ar">رقم الهاتف: </span>
+                    <span lang="en">Phone: </span>
+                    <a href="tel:+201113375019">+20 111 337 5019</a>
+                </p>
             </div>
-            <p style="color: var(--muted-foreground);">
-                <span lang="ar">رقم الهاتف: </span>
-                <span lang="en">Phone: </span>
-                <a href="tel:+201113375019" style="color: inherit;">+20 111 337 5019</a>
-            </p>
         </section>
     </main>
 
     <footer class="footer">
-        <p>
-            <span lang="ar">جميع الحقوق محفوظة © 2024 MOANAÀ</span>
-            <span lang="en">&copy; 2024 MOANAÀ. All rights reserved</span>
-        </p>
+        <div class="container">
+            <p>
+                <span lang="ar">جميع الحقوق محفوظة © 2024 MOANAÀ</span>
+                <span lang="en">&copy; 2024 MOANAÀ. All rights reserved</span>
+            </p>
+        </div>
     </footer>
 
-    <div id="productModal" class="modal" aria-hidden="true">
+    <div id="bodySplashModal" class="modal" aria-hidden="true">
         <div class="modal-content">
-            <span class="modal-close" onclick="closeModal('productModal')" aria-label="Close">&times;</span>
-            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/body-lotion-image.jpg-9Nwqxlay3POFbytBeNO04Tadbh9OAC.jpeg" alt="بادي لوشن موانا - MOANAÀ Body Lotion" class="product-image" style="margin-bottom: 1.5rem;">
+            <span class="modal-close" onclick="closeModal('bodySplashModal')" aria-label="Close">&times;</span>
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-02-26%20at%209.31.28%20PM-Af1tFS1Hj0jnXfAuduuJRml4HI2tWV.jpeg" alt="بادي سبلاش موانا - MOANAÀ Body Splash" class="product-image">
+            <h3 class="product-title" lang="ar">بادي سبلاش موانا</h3>
+            <h3 class="product-title" lang="en">MOANAÀ Body Splash</h3>
+            <p lang="ar">
+                عطرك المفضل... بادي سبلاش دلوقتي! ✨💦
+            </p>
+            <p lang="en">
+                Your Favorite Fragrance... Now as Body Splash! ✨💦
+            </p>
+            <p lang="ar">
+                مع موانا بادي سبلاش، هتنسى كل مشاكل العطور التقليدية! ثبات قوي، فوحان مميز، وآمن تمامًا حتى لأصحاب البشرة الحساسة. والأجمل؟ تقدر تختار أي عطر تحبه، وإحنا نحوله لك لبادي سبلاش مخصوص ليك!
+            </p>
+            <p lang="en">
+                With MOANAÀ Body Splash, you'll forget all traditional perfume problems! Strong longevity, distinctive fragrance, and completely safe even for sensitive skin. The best part? You can choose any perfume you like, and we'll transform it into a body splash specially customized for you!
+            </p>
+            <a href="https://wa.me/201113375019?text=أريد%20طلب%20بادي%20سبلاش%20موانا" target="_blank" rel="noopener noreferrer" class="btn whatsapp">
+                <i class="fab fa-whatsapp"></i>
+                <span lang="ar">اطلب عبر واتساب</span>
+                <span lang="en">Order via WhatsApp</span>
+            </a>
+        </div>
+    </div>
+
+    <div id="bodyLotionModal" class="modal" aria-hidden="true">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('bodyLotionModal')" aria-label="Close">&times;</span>
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/body-lotion-image.jpg-9Nwqxlay3POFbytBeNO04Tadbh9OAC.jpeg" alt="بادي لوشن موانا - MOANAÀ Body Lotion" class="product-image">
             <h3 class="product-title">🎀البادي لوشن (Body Lotion moanaa)</h3>
-            <p style="color: var(--muted-foreground); margin-bottom: 1.5rem;">
+            <p lang="ar">
                 يعتبر من أهم منتجات العناية بالبشرة، خاصة في فصل الشتاء، بسبب تأثير العوامل الجوية الباردة التي تسبب جفاف وتشقق البشرة. 🌧💫
             </p>
-            <div style="margin-bottom: 1.5rem;">
-                <h4 style="font-weight: 600; margin-bottom: 0.5rem;">🌊ترطيب البشرة:</h4>
-                <ul style="list-style-position: inside; color: var(--muted-foreground);">
-                    <li>💗يساعد البادي لوشن على تعويض فقدان الرطوبة الناتج عن التعرض للهواء البارد والجاف.</li>
-                    <li>💗يعمل كحاجز واقٍ لمنع فقدان الماء من البشرة.</li>
-                </ul>
-            </div>
-            <div style="background: var(--muted); padding: 1rem; border-radius: var(--radius); margin-bottom: 1.5rem;">
-                <h4 style="font-weight: 600; margin-bottom: 0.5rem;">🩷نصائح عند استخدام البادي لوشن في الشتاء🩷</h4>
-                <ul style="list-style-position: inside; color: var(--muted-foreground);">
-                    <li>✅استخدمه مباشرة بعد الاستحمام على بشرة رطبة لزيادة الامتصاص.</li>
-                    <li>يحتوي على زبدة الشيا وزيت اللوز.</li>
-                    <li>✅استخدميه يوميًا للحصول على نتائج أفضل.</li>
-                </ul>
-            </div>
-            <a href="https://wa.me/201113375019?text=🎀البادي%20لوشن%20(Body%20Lotion%20moanaa)" target="_blank" rel="noopener noreferrer" class="button whatsapp" style="width: 100%;">
+            <p lang="en">
+                Considered one of the most important skincare products, especially in winter, due to the effect of cold weather conditions that cause dry and cracked skin. 🌧💫
+            </p>
+            <h4 lang="ar">🌊ترطيب البشرة:</h4>
+            <h4 lang="en">🌊Skin Hydration:</h4>
+            <ul>
+                <li lang="ar">💗يساعد البادي لوشن على تعويض فقدان الرطوبة الناتج عن التعرض للهواء البارد والجاف.</li>
+                <li lang="en">💗Body lotion helps compensate for moisture loss resulting from exposure to cold and dry air.</li>
+                <li lang="ar">💗يعمل كحاجز واقٍ لمنع فقدان الماء من البشرة.</li>
+                <li lang="en">💗Acts as a protective barrier to prevent water loss from the skin.</li>
+            </ul>
+            <h4 lang="ar">🩷نصائح عند استخدام البادي لوشن في الشتاء🩷</h4>
+            <h4 lang="en">🩷Tips for using body lotion in winter🩷</h4>
+            <ul>
+                <li lang="ar">✅استخدمه مباشرة بعد الاستحمام على بشرة رطبة لزيادة الامتصاص.</li>
+                <li lang="en">✅Use it immediately after showering on damp skin to increase absorption.</li>
+                <li lang="ar">يحتوي على زبدة الشيا وزيت اللوز.</li>
+                <li lang="en">Contains shea butter and almond oil.</li>
+                <li lang="ar">✅استخدميه يوميًا للحصول على نتائج أفضل.</li>
+                <li lang="en">✅Use it daily for better results.</li>
+            </ul>
+            <a href="https://wa.me/201113375019?text=🎀البادي%20لوشن%20(Body%20Lotion%20moanaa)" target="_blank" rel="noopener noreferrer" class="btn whatsapp">
                 <i class="fab fa-whatsapp"></i>
                 <span lang="ar">اطلب عبر واتساب</span>
                 <span lang="en">Order via WhatsApp</span>
@@ -458,34 +600,82 @@
     <div id="lipBalmModal" class="modal" aria-hidden="true">
         <div class="modal-content">
             <span class="modal-close" onclick="closeModal('lipBalmModal')" aria-label="Close">&times;</span>
-            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-02-20%20at%2022.21.53_bcc790a2.jpg-LHiafT3nOsgSp7srS40WDydaU1sIk4.jpeg" alt="ليب بالم موانا - MOANAÀ Lip Balm" class="product-image" style="margin-bottom: 1.5rem;">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-02-20%20at%2022.21.53_bcc790a2.jpg-LHiafT3nOsgSp7srS40WDydaU1sIk4.jpeg" alt="ليب بالم موانا - MOANAÀ Lip Balm" class="product-image">
             <h3 class="product-title">💋 ليب بالم موانا (Lip Balm moanaa)</h3>
-            <p style="color: var(--muted-foreground); margin-bottom: 1.5rem;">
+            <p lang="ar">
                 تغير الجو بيعرض الشفايف للحساسيه والتقشر عشان كدا موانا عملتلكم اقوي lip palm
                 ناعم مرطب للشفايف وملمسه خفيف غير دهني 😋
             </p>
-            <p style="color: var(--muted-foreground); margin-bottom: 1.5rem;">
+            <p lang="en">
+                Weather changes expose lips to sensitivity and peeling, that's why MOANAÀ created the strongest lip balm
+                Smooth, moisturizing for the lips with a light, non-greasy texture 😋
+            </p>
+            <p lang="ar">
                 بيقلل جفاف الشفايف لانه بيشكل طبقه عازله تحبس الرطوبه للحفاظ على نعومتها 🥰
             </p>
-            
-            <div style="margin-bottom: 1.5rem;">
-                <h4 style="font-weight: 600; margin-bottom: 1rem;">المكونات 💊</h4>
-                <ul style="list-style-position: inside; color: var(--muted-foreground);">
-                    <li>🧈 زبدة الشيا لتنعيم الشفايف</li>
-                    <li>🍀 اللانولين يرطب الشفايف بعمق وينعم خطوط الشفاه</li>
-                    <li>🌸 جلسيرين يفتح خطوط الشفايف ويزيد مرونتها</li>
-                    <li>☀ فيتامين ه يغذي الشفايف ويحسن مرونتها</li>
-                </ul>
-            </div>
+            <p lang="en">
+                It reduces lip dryness because it forms an insulating layer that traps moisture to maintain their smoothness 🥰
+            </p>
+            <h4 lang="ar">المكونات 💊</h4>
+            <h4 lang="en">Ingredients 💊</h4>
+            <ul>
+                <li lang="ar">🧈 زبدة الشيا لتنعيم الشفايف</li>
+                <li lang="en">🧈 Shea butter to soften the lips</li>
+                <li lang="ar">🍀 اللانولين يرطب الشفايف بعمق وينعم خطوط الشفاه</li>
+                <li lang="en">🍀 Lanolin deeply moisturizes the lips and smooths lip lines</li>
+                <li lang="ar">🌸 جلسيرين يفتح خطوط الشفايف ويزيد مرونتها</li>
+                <li lang="en">🌸 Glycerin opens up lip lines and increases their flexibility</li>
+                <li lang="ar">☀ فيتامين ه يغذي الشفايف ويحسن مرونتها</li>
+                <li lang="en">☀ Vitamin E nourishes the lips and improves their elasticity</li>
+            </ul>
+            <h4 lang="ar">طريقة الاستخدام ☀🌙</h4>
+            <h4 lang="en">How to use ☀🌙</h4>
+            <p lang="ar">
+                ممكن تستخدميه ليب بالم مرطب نهاري للشفايف لوحده او قبل الروج وممكن تستخدميه ماسك ليلي قبل النوم
+            </p>
+            <p lang="en">
+                You can use it as a daytime moisturizing lip balm alone or before lipstick, and you can use it as a night mask before sleep
+            </p>
+            <a href="https://wa.me/201113375019?text=💋%20ليب%20بالم%20موانا%20(Lip%20Balm%20moanaa)" target="_blank" rel="noopener noreferrer" class="btn whatsapp">
+                <i class="fab fa-whatsapp"></i>
+                <span lang="ar">اطلب عبر واتساب</span>
+                <span lang="en">Order via WhatsApp</span>
+            </a>
+        </div>
+    </div>
 
-            <div style="background: var(--muted); padding: 1rem; border-radius: var(--radius); margin-bottom: 1.5rem;">
-                <h4 style="font-weight: 600; margin-bottom: 0.5rem;">طريقة الاستخدام ☀🌙</h4>
-                <p style="color: var(--muted-foreground);">
-                    ممكن تستخدميه ليب بالم مرطب نهاري للشفايف لوحده او قبل الروج وممكن تستخدميه ماسك ليلي قبل النوم
-                </p>
-            </div>
-
-            <a href="https://wa.me/201113375019?text=💋%20ليب%20بالم%20موانا%20(Lip%20Balm%20moanaa)" target="_blank" rel="noopener noreferrer" class="button whatsapp" style="width: 100%;">
+    <div id="hairOilModal" class="modal" aria-hidden="true">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('hairOilModal')" aria-label="Close">&times;</span>
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-02-26%20at%209.32.20%20PM-PgtTBblhWco41mjYych8EPuF8B8z7x.jpeg" alt="زيت موانا للشعر - MOANAÀ Hair Oil" class="product-image">
+            <h3 class="product-title">💗 زيت موانا للشعر (Moanaa oil)</h3>
+            <p lang="ar">
+                زيت موانا للشعر هو الحل الأمثل للعناية بالشعر وتقويته
+            </p>
+            <p lang="en">
+                Moanaa oil is the perfect solution for hair care and strengthening
+            </p>
+            <h4 lang="ar">فوائد زيت موانا للشعر:</h4>
+            <h4 lang="en">Benefits of Moanaa oil for hair:</h4>
+            <ul>
+                <li lang="ar">يساعد على تكثيف الشعر</li>
+                <li lang="en">To thicken hair</li>
+                <li lang="ar">يقلل من تساقط الشعر</li>
+                <li lang="en">It reduces hair loss</li>
+                <li lang="ar">ينمي الشعر ويقوي الجذور</li>
+                <li lang="en">It grows hair and strengthens the roots</li>
+                <li lang="ar">يحافظ على صحة الشعر</li>
+                <li lang="en">It keeps the hair healthy</li>
+                <li lang="ar">يقوي البصيلات ويغذي الشعر من الداخل</li>
+                <li lang="en">It strengthens the follicles and nourishes the hair from the inside</li>
+            </ul>
+            <p lang="ar">
+                #العناية_بالشعر مع موانا
+            </p>
+            <p lang="en">
+                #HairCare with MOaNaà
+            </p>
+            <a href="https://wa.me/201113375019?text=💗%20زيت%20موانا%20للشعر%20(Moanaa%20oil)" target="_blank" rel="noopener noreferrer" class="btn whatsapp">
                 <i class="fab fa-whatsapp"></i>
                 <span lang="ar">اطلب عبر واتساب</span>
                 <span lang="en">Order via WhatsApp</span>
@@ -561,9 +751,9 @@
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "MOANAÀ",
-      "url": "https://mostafa93205.github.io/MOaNaa/",
+      "url": "https://www.moanaa.com/",
       "logo": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-02-19%20at%2012.19.32%20PM%20(1)-DFeMTTUwBnJSKctNrepSNPAP9gDnqy.jpeg",
-      "description": "MOANAÀ offers high-quality natural skincare products. Discover our collection of body lotions and lip balms for soft, radiant skin.",
+      "description": "MOANAÀ offers high-quality natural skincare products. Discover our collection of body splash, body lotions and lip balms for soft, radiant skin.",
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+201113375019",
